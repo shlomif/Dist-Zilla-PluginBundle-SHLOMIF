@@ -1,4 +1,4 @@
-package Dist::Zilla::PluginBundle::DOY;
+package Dist::Zilla::PluginBundle::SHLOMIF;
 use Moose;
 # ABSTRACT: Dist::Zilla plugins for me
 
@@ -10,13 +10,15 @@ with 'Dist::Zilla::Role::PluginBundle::Easy';
 =head1 SYNOPSIS
 
   # dist.ini
-  [@DOY]
-  dist = Dist-Zilla-PluginBundle-DOY
+  [@SHLOMIF]
+  dist = Dist-Zilla-PluginBundle-SHLOMIF
   repository = github
 
 =head1 DESCRIPTION
 
-My plugin bundle. Roughly equivalent to:
+Shlomi Fish’s plugin bundle (originally derived/forked/based-on
+L<https://github.com/doy/dist-zilla-pluginbundle-doy> - thanks). Roughly
+equivalent to (FILL IN/update).
 
     [Prereqs / TestMoreDoneTesting]
     -phase = test
@@ -87,13 +89,13 @@ has dist => (
 has authority => (
     is      => 'ro',
     isa     => 'Str',
-    default => 'cpan:DOY',
+    default => 'cpan:SHLOMIF',
 );
 
 has github_user => (
     is      => 'ro',
     isa     => 'Str',
-    default => 'doy',
+    default => 'shlomif',
 );
 
 has github_name => (
@@ -145,11 +147,6 @@ has _repository_host_map => (
                 repository_type => 'git',
                 repository_url  => sprintf('git://github.com/%s/%s.git', $self->github_user, $self->github_name),
                 repository_web  => sprintf('https://github.com/%s/%s', $self->github_user, $self->github_name),
-            },
-            'gitmo' => {
-                repository_type => 'git',
-                repository_url  => sprintf('git://git.moose.perl.org/%s.git', $self->dist),
-                repository_web  => sprintf('http://git.shadowcat.co.uk/gitweb/gitweb.cgi?p=gitmo/%s.git;a=summary', $self->dist),
             },
         }
     },
@@ -255,40 +252,38 @@ has _plugins => (
         my $self = shift;
         [
             qw(
+                ExecDir
                 GatherDir
-                PruneCruft
+                License
                 ManifestSkip
                 MetaYAML
-                License
+                PruneCruft
                 Readme
                 RunExtraTests
-                ExecDir
                 ShareDir
             ),
             ($self->awesome ? $self->awesome : 'MakeMaker'),
             qw(
-                Manifest
-                TestRelease
+                Authority
+                CheckChangesHasContent
                 ConfirmRelease
+                Manifest
                 MetaConfig
                 MetaJSON
-                NextRelease
-                CheckChangesHasContent
+                MetaProvides::Package
+                MetaResources
+                Metadata
+                ModuleBuild
                 PkgVersion
-                Authority
                 PodCoverageTests
                 PodSyntaxTests
-                Test::NoTabs
-                Test::EOL
                 Test::Compile
-                Metadata
-                MetaResources
-                Git::Check
-                Git::Commit
-                Git::Tag
-                Git::NextVersion
-                ContributorsFromGit
-                MetaProvides::Package
+                Test::CPAN::Changes
+                Test::EOL
+                Test::NoTabs
+                Test::Kwalitee::Extra
+                Test::TrailingSpace
+                TestRelease
             ),
             ($self->is_task      ? 'TaskWeaver'  : 'PodWeaver'),
             ($self->is_test_dist ? 'FakeRelease' : 'UploadToCPAN'),
@@ -304,17 +299,7 @@ has plugin_options => (
     default  => sub {
         my $self = shift;
         my %opts = (
-            'NextRelease'        => { format => '%-5v %{yyyy-MM-dd}d' },
             'Authority'          => { authority => $self->authority },
-            'Git::Check'         => { allow_dirty => '' },
-            'Git::Tag'           => { tag_format => '%v', tag_message => '' },
-            'Git::NextVersion' => {
-                version_regexp => '^(\d+\.\d+)$',
-                first_version  => '0.01'
-            },
-            'Git::Commit' => {
-                commit_msg => 'changelog',
-            },
         );
 
         $opts{Metadata} = {
@@ -368,46 +353,13 @@ sub configure {
     );
 }
 
-=head1 BUGS
-
-No known bugs.
-
-Please report any bugs to GitHub Issues at
-L<https://github.com/doy/dist-zilla-pluginbundle-doy/issues>.
-
 =head1 SEE ALSO
 
 L<Dist::Zilla>
 
 L<Task::BeLike::DOY>
 
-=head1 SUPPORT
-
-You can find this documentation for this module with the perldoc command.
-
-    perldoc Dist::Zilla::PluginBundle::DOY
-
-You can also look for information at:
-
-=over 4
-
-=item * MetaCPAN
-
-L<https://metacpan.org/release/Dist-Zilla-PluginBundle-DOY>
-
-=item * Github
-
-L<https://github.com/doy/dist-zilla-pluginbundle-doy>
-
-=item * RT: CPAN's request tracker
-
-L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-DOY>
-
-=item * CPAN Ratings
-
-L<http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-DOY>
-
-=back
+L<Dist::Zilla::PluginBundle::DOY>
 
 =begin Pod::Coverage
 
