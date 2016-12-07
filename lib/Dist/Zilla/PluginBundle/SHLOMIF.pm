@@ -252,6 +252,7 @@ has _plugins => (
         my $self = shift;
         [
             qw(
+                AutoPrereqs
                 ExecDir
                 GatherDir
                 License
@@ -277,6 +278,7 @@ has _plugins => (
                 PkgVersion
                 PodCoverageTests
                 PodSyntaxTests
+                PodVersion
                 Test::Compile
                 Test::CPAN::Changes
                 Test::EOL
