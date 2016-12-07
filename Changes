@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-SHLOMIF
 
+0.000002    2016-12-07
+      - New version to satisfy @DOY.
+
 0.000001    2016-12-07
       - Forked from Dist-Zilla-PluginBundle-DOY - thanks!
       - First CPAN version - here goes nothing.
