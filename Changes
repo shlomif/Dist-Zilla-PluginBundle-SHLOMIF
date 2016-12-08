@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-SHLOMIF
 
+0.000004    2016-12-08
+        - Fixes to the links in the distro due to the @DOY defaults.
+
 0.000003    2016-12-08
         - Try to fix the CPAN Testers' failures, e.g:
             - http://www.cpantesters.org/cpan/report/35f2558c-bcba-11e6-850a-ec1cdb1d0fc3
