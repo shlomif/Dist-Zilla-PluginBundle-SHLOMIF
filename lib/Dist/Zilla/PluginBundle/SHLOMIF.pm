@@ -1,4 +1,7 @@
 package Dist::Zilla::PluginBundle::SHLOMIF;
+
+use 5.014;
+
 use Moose;
 # ABSTRACT: Dist::Zilla plugins for me
 

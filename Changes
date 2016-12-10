@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-SHLOMIF
 
+0.000005    2016-12-10
+        - Make the distribution self-hosting (= using [@SHLOMIF] instead
+        of [@DOY] ).
+
 0.000004    2016-12-08
         - Fixes to the links in the distro due to the @DOY defaults.
 
