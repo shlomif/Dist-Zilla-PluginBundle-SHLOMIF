@@ -276,7 +276,6 @@ has _plugins => (
                 MetaJSON
                 MetaProvides::Package
                 MetaResources
-                Metadata
                 ModuleBuild
                 PkgVersion
                 PodCoverageTests
@@ -306,10 +305,6 @@ has plugin_options => (
         my %opts = (
             'Authority'          => { authority => $self->authority },
         );
-
-        $opts{Metadata} = {
-            dynamic_config => 1,
-        } if $self->dynamic_config;
 
         for my $metaresource (qw(repository.type repository.url repository.web bugtracker.web bugtracker.mailto homepage)) {
             (my $method = $metaresource) =~ s/\./_/g;
