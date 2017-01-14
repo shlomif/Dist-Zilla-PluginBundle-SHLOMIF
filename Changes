@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-SHLOMIF
 
+0.000006    2017-01-14
+        - Set the authority to SHLOMIF instead of DOY in the POD.
+
 0.000005    2016-12-10
         - Make the distribution self-hosting (= using [@SHLOMIF] instead
         of [@DOY] ).

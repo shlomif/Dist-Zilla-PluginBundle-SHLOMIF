@@ -52,7 +52,7 @@ equivalent to (FILL IN/update).
 
     [PkgVersion]
     [Authority]
-    authority = cpan:DOY
+    authority = cpan:SHLOMIF
 
     [PodCoverageTests]
     [PodSyntaxTests]
