@@ -1,5 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-SHLOMIF
 
+0.000007    2017-04-05
+        - Add CPAN Prereqs to the bundle in dist.ini / Makefile.PL
+
 0.000006    2017-01-14
         - Set the authority to SHLOMIF instead of DOY in the POD.
 
