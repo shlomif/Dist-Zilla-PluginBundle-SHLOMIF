@@ -10,6 +10,10 @@ use List::MoreUtils qw(any);
 use Dist::Zilla;
 with 'Dist::Zilla::Role::PluginBundle::Easy';
 
+=head1 NAME
+
+Dist::Zilla::PluginBundle::SHLOMIF - dzil plugins for SHLOMIF (Shlomi Fish)
+
 =head1 SYNOPSIS
 
   # dist.ini
