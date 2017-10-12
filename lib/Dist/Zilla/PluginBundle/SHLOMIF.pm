@@ -115,6 +115,7 @@ has github_name => (
 has repository => (
     is  => 'ro',
     isa => 'Str',
+    default => 'github',
 );
 
 for my $attr (qw(repository_type repository_url repository_web)) {
