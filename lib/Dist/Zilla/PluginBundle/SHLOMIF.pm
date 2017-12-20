@@ -273,7 +273,6 @@ has _plugins => (
             ),
             ($self->awesome ? $self->awesome : 'MakeMaker'),
             qw(
-                Authority
                 CheckChangesHasContent
                 ConfirmRelease
                 Manifest
@@ -290,7 +289,6 @@ has _plugins => (
                 Test::CPAN::Changes
                 Test::EOL
                 Test::NoTabs
-                Test::Kwalitee::Extra
                 Test::TrailingSpace
                 TestRelease
             ),
