@@ -284,7 +284,6 @@ has _plugins => (
                 PkgVersion
                 PodCoverageTests
                 PodSyntaxTests
-                PodVersion
                 Test::Compile
                 Test::CPAN::Changes
                 Test::EOL
